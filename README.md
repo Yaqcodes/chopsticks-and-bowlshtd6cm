@@ -1,1 +1,0 @@
-# chopsticks-and-bowlshtd6cm
