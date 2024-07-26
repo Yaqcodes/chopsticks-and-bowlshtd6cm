@@ -10,11 +10,11 @@
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
+            id="scene"
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
             renderer="logarithmicDepthBuffer: true;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
             embedded
             gesture-detector
         >
@@ -36,7 +36,6 @@
                 id="markerA"
             >
                 <a-entity
-                    rotation="90 0 0"
                     id="bowser-model"
                     scale="0.36977794346343507 0.36977794346343507 0.36977794346343507"
                     animation-mixer="loop: repeat"
@@ -48,5 +47,12 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const model = document.querySelector('#bowser-model');
+                model.object3D.rotation.x = THREE.Math.degToRad(90); // Rotate 90 degrees along the x-axis
+            });
+        </script>
     </body>
 </html>
